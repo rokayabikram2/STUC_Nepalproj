@@ -80,27 +80,21 @@ def globalsetting(request):
         address = request.POST.get('address')
         email = request.POST.get('email')
         description = request.POST.get('description')
-        licence = request.POST.get('licence')
         twitterlink = request.POST.get('twitterlink')
         facebooklink = request.POST.get('facebooklink')
-        linkdinlink = request.POST.get('linkdinlink')
-        instagram = request.POST.get('instagram')
         youtubelink = request.POST.get('youtubelink')
         logo = request.FILES.get('logo')
         flag_logo = request.FILES.get('flag_logo')
         back_image = request.FILES.get('back_image')
-        brochure = request.FILES.get('brochure')
-        fax = request.POST.get('fax')
-        brochure_name = request.POST.get('brochure_name')
-        box = request.POST.get('box')
+        name_nepali = request.POST.get('name_nepali')
 
 
         if data is None:
             # Create a new GlobalSettings object
             data = GlobalSettings(SiteName=name, SiteContact=contact, SiteAddress=address, SiteEmail=email,
-                                  Sitedescription=description,Sitelicence=licence,Sitetwitterlink=twitterlink,
-                                  Sitefacebooklink=facebooklink,Sitelinkdinlink=linkdinlink,Siteinstagram=instagram,
-                                  Siteyoutubelink=youtubelink,Sitefax=fax,SiteBox=box,brochure_name=brochure_name)
+                                  Sitedescription=description,Sitetwitterlink=twitterlink,
+                                  Sitefacebooklink=facebooklink,name_nepali=name_nepali,
+                                  Siteyoutubelink=youtubelink)
         else:
             # Update existing GlobalSettings object
             data.SiteName = name
@@ -108,15 +102,10 @@ def globalsetting(request):
             data.SiteAddress = address
             data.SiteEmail = email
             data.Sitedescription = description
-            data.Sitelicence = licence
             data.Sitetwitterlink = twitterlink
             data.Sitefacebooklink = facebooklink
-            data.Sitelinkdinlink = linkdinlink
-            data.Siteinstagram = instagram
             data.Siteyoutubelink = youtubelink
-            data.Sitefax = fax
-            data.SiteBox = box
-            data.brochure_name = brochure_name
+            data.name_nepali = name_nepali
 
         if logo:
             # Set the uploaded image to the 'logo' field
@@ -125,9 +114,7 @@ def globalsetting(request):
         if flag_logo:
             data.flag_logo = flag_logo
             
-        if brochure:
-            # Set the uploaded image to the 'logo' field
-            data.brochure = brochure
+       
             
         if back_image:
             data.back_image = back_image

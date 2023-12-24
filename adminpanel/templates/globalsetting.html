@@ -40,6 +40,14 @@
                                required>
                       </div>
                       <div class="form-group">
+                        <label class="col-2 p-2">SiteName Nepali</label>
+                        <input type="text"
+                               class="col-7"
+                               name="name_nepali"
+                               value="{{ data.name_nepali }}"
+                               required>
+                      </div>
+                      <div class="form-group">
                         <label class="col-2 p-2">SiteAddress</label>
                         <input type="text"
                                class="col-7"
@@ -64,17 +72,6 @@
                                required>
                       </div>
                       <div class="form-group">
-                        <label class="col-2 p-2">SiteEmail_1:</label>
-                        <input type="text"
-                               class="col-7"
-                               name="licence"
-                               value="{{ data.Sitelicence }}">
-                      </div>
-                      <div class="form-group">
-                        <label class="col-2 p-2">SiteFax:</label>
-                        <input type="text" class="col-7" name="fax" value="{{ data.Sitefax }}">
-                      </div>
-                      <div class="form-group">
                         <label class="col-2 p-2">Sitetwitterlink:</label>
                         <input type="text"
                                class="col-7"
@@ -88,20 +85,7 @@
                                name="facebooklink"
                                value="{{ data.Sitefacebooklink }}">
                       </div>
-                      {% comment %} <div class="form-group">
-                        <label class="col-2 p-2">Sitelinkdinlink:</label>
-                        <input type="text"
-                               class="col-7"
-                               name="linkdinlink"
-                               value="{{ data.Sitelinkdinlink }}">
-                      </div> {% endcomment %}
-                      <div class="form-group">
-                        <label class="col-2 p-2">Siteinstagram:</label>
-                        <input type="text"
-                               class="col-7"
-                               name="instagram"
-                               value="{{ data.Siteinstagram }}">
-                      </div>
+                      
                       <div class="form-group">
                         <label class="col-2 p-2">Siteyoutubelink:</label>
                         <input type="text"
@@ -109,10 +93,7 @@
                                name="youtubelink"
                                value="{{ data.Siteyoutubelink }}">
                       </div>
-                      {% comment %} <div class="form-group">
-                        <label class="col-2 p-2">SitePOBOX:</label>
-                        <input type="text" class="col-7" name="box" value="{{ data.SiteBox }}">
-                      </div> {% endcomment %}
+                      
                       <div class="form-group">
                         <label class="col-2 p-2">Sitedescription:</label>
                         <textarea class="col-7" name="description">{{ data.Sitedescription }}</textarea>

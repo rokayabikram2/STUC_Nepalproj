@@ -22,9 +22,9 @@ from adminpanel.views import ReactAppView
 urlpatterns = [
     path("admin/", include("adminpanel.urls")),
     path("api/", include("adminpanel.api_urls")),
+    # path('dj-admin/', admin.site.urls),
     path('',ReactAppView.as_view()),
     re_path(r'^(?!admin/|api/|media/|static/|assets/).+', ReactAppView.as_view()),
-    # path('dj-admin/', admin.site.urls),
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

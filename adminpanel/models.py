@@ -2,26 +2,19 @@ from django.db import models
 # from django.utils import timezone
 
 class GlobalSettings(models.Model):
-    SiteName = models.CharField(max_length=100)
-    SiteContact = models.CharField(max_length=100)
+    SiteName = models.CharField(max_length=100,null =True)
+    name_nepali = models.CharField(max_length=100,null =True)
+    SiteContact = models.CharField(max_length=100,null =True)
     SiteEmail = models.EmailField()
-    SiteAddress = models.CharField(max_length=500)
-    Sitedescription = models.CharField(max_length=500)
-    Sitelicence = models.CharField(max_length=300)
-    Sitetwitterlink = models.CharField(max_length=300)
-    Sitefacebooklink = models.CharField(max_length=300)
-    Sitelinkdinlink = models.CharField(max_length=300,null=True)
-    Siteinstagram = models.CharField(max_length=300)
-    Siteyoutubelink = models.CharField(max_length=300)
+    SiteAddress = models.CharField(max_length=500,null =True)
+    Sitedescription = models.CharField(max_length=500,null =True)
+    Sitetwitterlink = models.CharField(max_length=300,null =True)
+    Sitefacebooklink = models.CharField(max_length=300,null =True)
+    Siteyoutubelink = models.CharField(max_length=300,null =True)
     Sitefax = models.CharField(max_length=300,null=True)
-    SiteBox = models.CharField(max_length=300,null=True)
     logo = models.ImageField(upload_to="Global/",max_length=200, null=True,default=None)
     flag_logo = models.ImageField(upload_to="logo/",null=True,default=None)
     back_image = models.ImageField(upload_to="Global/",null=True)
-    brochure = models.FileField(upload_to="brochure/",null=True)
-    brochure_name = models.CharField(max_length=100,null=True)
-    
-
 
     def __str__(self):
         return self.SiteName
