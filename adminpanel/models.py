@@ -15,10 +15,12 @@ class GlobalSettings(models.Model):
     Siteyoutubelink = models.CharField(max_length=300)
     Sitefax = models.CharField(max_length=300,null=True)
     SiteBox = models.CharField(max_length=300,null=True)
-    logo = models.ImageField(upload_to="Global/",max_length=200, null=True, default=None)
+    logo = models.ImageField(upload_to="Global/",max_length=200, null=True,default=None)
+    flag_logo = models.ImageField(upload_to="logo/",null=True,default=None)
     back_image = models.ImageField(upload_to="Global/",null=True)
     brochure = models.FileField(upload_to="brochure/",null=True)
     brochure_name = models.CharField(max_length=100,null=True)
+    
 
 
     def __str__(self):

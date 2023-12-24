@@ -87,6 +87,7 @@ def globalsetting(request):
         instagram = request.POST.get('instagram')
         youtubelink = request.POST.get('youtubelink')
         logo = request.FILES.get('logo')
+        flag_logo = request.FILES.get('flag_logo')
         back_image = request.FILES.get('back_image')
         brochure = request.FILES.get('brochure')
         fax = request.POST.get('fax')
@@ -120,9 +121,14 @@ def globalsetting(request):
         if logo:
             # Set the uploaded image to the 'logo' field
             data.logo = logo
+            
+        if flag_logo:
+            data.flag_logo = flag_logo
+            
         if brochure:
             # Set the uploaded image to the 'logo' field
             data.brochure = brochure
+            
         if back_image:
             data.back_image = back_image
         

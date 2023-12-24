@@ -144,10 +144,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 #Assets
 ASSETS_URL = "/assets/"
-ASSETS_ROOT = os.path.join(BASE_DIR,"STUC-Nepal", "frontend_file", 'dist', 'assets')
+ASSETS_ROOT = os.path.join(BASE_DIR,"STUC-Nepal", "client", 'dist', 'assets')
 
 #reactapp
-REACT_APP = os.path.join(BASE_DIR,"STUC-Nepal",'frontend_file')
+REACT_APP = os.path.join(BASE_DIR,"STUC-Nepal",'client')
 
 
 # Default primary key field type
