@@ -42,7 +42,7 @@ class Comment(models.Model):
 
 class Navigation(models.Model):
     PAGE_TYPE = (
-        ('Home', 'Home'),('Slider','Slider'),('Home/About', 'Home/About'),('Features', 'Features'),
+        ('Home', 'Home'),('Home/Banner','Home/Banner'),('Notice','Notice'),('Features', 'Features'),
         ('Features_1', 'Features_1'),('Home/Video', 'Home/Video'),('Aboutus', 'Aboutus'),('Aboutus_1', 'Aboutus_1'),
         ('Achievements', 'Achievements'),('Achievements_1', 'Achievements_1'),('Testimonials', 'Testimonials'),
         ('Blog','Blog'),('Services', 'Services'),('Vision','Vision'),('Mission','Mission'),

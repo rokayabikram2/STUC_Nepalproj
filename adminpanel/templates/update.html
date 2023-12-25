@@ -104,7 +104,7 @@
                                                             <div class="col-12 p-2">
                                                                 <label>Name</label>
                                                             </div>
-                                                            <div class="col-8">
+                                                            <div class="col-11">
                                                                 <input type="text" name="name" value="{{ data.name }}">
                                                             </div>
                                                         </div>
@@ -159,13 +159,13 @@
                                                                             {% if data.page_type == "Home" %}selected="selected"{% endif %}>
                                                                         Home
                                                                     </option>
-                                                                    <option value="Slider"
-                                                                            {% if data.page_type == "Slider" %}selected="selected"{% endif %}>
-                                                                        Slider
+                                                                    <option value="Home/Banner"
+                                                                            {% if data.page_type == "Home/Banner" %}selected="selected"{% endif %}>
+                                                                        Home/Banner
                                                                     </option>
-                                                                    <option value="Home/About"
-                                                                            {% if data.page_type == "Home/About" %}selected="selected"{% endif %}>
-                                                                        Home/About
+                                                                    <option value="Notice"
+                                                                            {% if data.page_type == "Notice" %}selected="selected"{% endif %}>
+                                                                        Notice
                                                                     </option>
                                                                     <option value="Features"
                                                                             {% if data.page_type == "Features" %}selected="selected"{% endif %}>
@@ -277,116 +277,7 @@
                                                                     Client/Title
                                                                     </option>
                                                         
-                                                                    {% comment %} <option value="UNSKILLED" {% if data.page_type == "UNSKILLED" %}selected="selected"{% endif %}>
-                                                                        UNSKILLED
-                                                                    </option>
-                                                                    <option value="Procedure" {% if data.page_type == "Procedure" %}selected="selected"{% endif %}>
-                                                                        Procedure
-                                                                    </option>
-                                                                    <option value="Procedure_1" {% if data.page_type == "Procedure_1" %}selected="selected"{% endif %}>
-                                                                        Procedure_1
-                                                                    </option>
-                                                                    <option value="Documents" {% if data.page_type == "Documents" %}selected="selected"{% endif %}>
-                                                                        Documents
-                                                                    </option>
-                                                                    <option value="Newspaper" {% if data.page_type == "Newspaper" %}selected="selected"{% endif %}>
-                                                                        Newspaper
-                                                                    </option>
-                                                                    <option value="Newspaper_1" {% if data.page_type == "Newspaper_1" %}selected="selected"{% endif %}>
-                                                                        Newspaper_1
-                                                                    </option>
-                                                                    <option value="Gallery" {% if data.page_type == "Gallery" %}selected="selected"{% endif %}>
-                                                                        Gallery
-                                                                    </option>
-                                                                    <option value="Gallery_1" {% if data.page_type == "Gallery_1" %}selected="selected"{% endif %}>
-                                                                        Gallery_1
-                                                                    </option>
-                                                                    <option value="Contact" {% if data.page_type == "Contact" %}selected="selected"{% endif %}>
-                                                                        Contact
-                                                                    </option> {% endcomment %}
-                                                                    {% comment %} <option value="Documents" {% if data.page_type == "Documents" %}selected="selected"{% endif %}>
-                                                                        Documents
-                                                                    </option>
-                                                                    
-                                                                    <option value="Our Service" {% if data.page_type == "Our Service" %}selected="selected"{% endif %}>
-                                                                        Our Service
-                                                                    </option>
-                                                                    <option value="Requirement" {% if data.page_type == "Requirement" %}selected="selected"{% endif %}>
-                                                                        Requirement
-                                                                    </option>
-                                                                    <option value="Talent" {% if data.page_type == "Talent" %}selected="selected"{% endif %}>
-                                                                        Talent
-                                                                    </option>
-                                                                    <option value="Job Vacancy" {% if data.page_type == "Job Vacancy" %}selected="selected"{% endif %}>
-                                                                        Job Vacancy
-                                                                    </option>
-                                                                    <option value="Procedure" {% if data.page_type == "Procedure" %}selected="selected"{% endif %}>
-                                                                        Procedure
-                                                                    </option>
-                                                                    <option value="Instructors" {% if data.page_type == "Instructors" %}selected="selected"{% endif %}>
-                                                                        Instructors
-                                                                    </option>
-                                                                    <option value="Job List" {% if data.page_type == "Job List" %}selected="selected"{% endif %}>
-                                                                        Job List
-                                                                    </option>
-                                                                    <option value="Clients Say" {% if data.page_type == "Clients Say" %}selected="selected"{% endif %}>
-                                                                        Clients Say
-                                                                    </option>
-                                                                    <option value="Home1" {% if data.page_type == "Home1" %}selected="selected"{% endif %}>
-                                                                        Home1
-                                                                    </option>
-                                                                    <option value="Documents 1" {% if data.page_type == "Documents 1" %}selected="selected"{% endif %}>
-                                                                        Documents 1
-                                                                    </option>
-                                                                    <option value="Client" {% if data.page_type == "Client" %}selected="selected"{% endif %}>
-                                                                        Client
-                                                                    </option>
-                                                                    <option value="Job3" {% if data.page_type == "Job3" %}selected="selected"{% endif %}>
-                                                                        Job3
-                                                                    </option>
-                                                                    <option value="Client1" {% if data.page_type == "Client1" %}selected="selected"{% endif %}>
-                                                                        Client1
-                                                                    </option>
-                                                                    <option value="Client2" {% if data.page_type == "Client2" %}selected="selected"{% endif %}>
-                                                                        Client2
-                                                                    </option>
-                                                                    <option value="Legal Document" {% if data.page_type == "Legal Document" %}selected="selected"{% endif %}>
-                                                                        Legal Document
-                                                                    </option>
-                                                                    <option value="Message" {% if data.page_type == "Message" %}selected="selected"{% endif %}>
-                                                                        Message
-                                                                    </option>
-                                                                    <option value="Job Details" {% if data.page_type == "Job Details" %}selected="selected"{% endif %}>
-                                                                        Job Details
-                                                                    </option>
-                                                                    <option value="HIGHLYSKILLED" {% if data.page_type == "HIGHLYSKILLED" %}selected="selected"{% endif %}>
-                                                                        HIGHLYSKILLED
-                                                                    </option>
-                                                                    <option value="All detail" {% if data.page_type == "All detail" %}selected="selected"{% endif %}>
-                                                                        All detail
-                                                                    </option>
-                                                                    <option value="SKILLED 4" {% if data.page_type == "SKILLED 4" %}selected="selected"{% endif %}>
-                                                                        SKILLED 4
-                                                                    </option>
-                                                                    <option value="Our Instructors" {% if data.page_type == "Our Instructors" %}selected="selected"{% endif %}>
-                                                                        Our Instructors
-                                                                    </option>
-                                                                    <option value="Instructors" {% if data.page_type == "Instructors" %}selected="selected"{% endif %}>
-                                                                        Instructors
-                                                                    </option>
-                                                                    <option value="Countries" {% if data.page_type == "Countries" %}selected="selected"{% endif %}>
-                                                                        Countries
-                                                                    </option>
-                                                                    <option value="Service 1" {% if data.page_type == "Service 1" %}selected="selected"{% endif %}>
-                                                                        Service 1
-                                                                    </option>
-                                                                    <option value="Why" {% if data.page_type == "Why" %}selected="selected"{% endif %}>
-                                                                        Why
-                                                                    </option>
-                                                                    <option value="Why 2" {% if data.page_type == "Why 2" %}selected="selected"{% endif %}>
-                                                                        Why 2
-                                                                    </option>
-                                                                    {% endcomment %}
+                                                              
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -485,7 +376,7 @@
                                                                     {% endif %} {% endcomment %}
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6 mt-5">
+                                                            {% comment %} <div class="col-6 mt-5">
                                                                 <div class="col-12 p-2">
                                                                     <label>Slider Image</label>
                                                                 </div>
@@ -497,7 +388,7 @@
                                                                                     height: auto">
                                                                     {% endif %}
                                                                 </div>
-                                                            </div>
+                                                            </div> {% endcomment %}
                                                             <div class="col-6">
                                                                 <div class="col-12 p-2 mt-5">
                                                                     <label>Image</label>

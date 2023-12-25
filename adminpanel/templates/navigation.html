@@ -108,7 +108,7 @@
                                                             <div class="col-12 p-2">
                                                                 <label>Name</label>
                                                             </div>
-                                                            <div class="col-8">
+                                                            <div class="col-11">
                                                                 <input type="text" name="name" required>
                                                             </div>
                                                         </div>
@@ -160,8 +160,8 @@
                                                                 <select name="page_type" required>
                                                                     <option value="">Select Page Type</option>
                                                                     <option value="Home">Home</option>
-                                                                    <option value="Slider">Slider</option>
-                                                                    <option value="Home/About">Home/About</option>
+                                                                    <option value="Home/Banner">Home/Banner</option>
+                                                                    <option value="Notice">Notice</option>
                                                                     <option value="Features">Features</option>
                                                                     <option value="Group">Group</option>
                                                                     <option value="Features_1">Features_1</option>
@@ -189,41 +189,7 @@
                                                                     <option value="Services_1">Services_1</option>
                                                                     <option value="Client">Client</option>
                                                                     <option value="Client/Title">Client/Title</option>                    
-                                                                    {% comment %} <option value="Registration">Registration</option>
-                                                                    <option value="SKILLED 3">SKILLED 3</option>
-                                                                    <option value="Demand Letter">Demand Letter</option>
-                                                                    <option value="Procedure">Procedure</option>
-                                                                    <option value="Procedure_1">Procedure_1</option>
-                                                                    <option value="Documents">Documents</option>
-                                                                    <option value="Newspaper">Newspaper</option>
-                                                                    <option value="Newspaper_1">Newspaper_1</option>
-                                                                    <option value="Gallery_1">Gallery_1</option> {% endcomment %}
-                                                                    {% comment %} <option value="Documents">Documents</option>
-                                                                    <option value="Our Service">Our Service</option>
-                                                                    <option value="Talent">Talent</option>
-                                                                    <option value="Job Vacancy">Job Vacancy</option>
-                                                                    <option value="Procedure">Procedure</option>
-                                                                    <option value="InstructorsE">Instructors</option>
-                                                                    <option value="Job List">Job List</option>
-                                                                    <option value="Clients Say">Clients Say</option>
-                                                                    <option value="Home1">Home1</option>
-                                                                    <option value="Documents 1">Documents 1</option>
-                                                                    <option value="Client">Client</option>
-                                                                    <option value="Job3">Job3</option>
-                                                                    <option value="Client1">Client1</option>
-                                                                    <option value="Client2">Client2</option>
-                                                                    <option value="Legal Document">Legal Document</option>
-                                                                    <option value="Message">Message</option>
-                                                                    <option value="Job Details">Job Details</option>
-                                                                    <option value="HIGHLYSKILLED">HIGHLYSKILLED</option>
-                                                                    <option value="All detail">All detail</option>
-                                                                    <option value="SKILLED 4">SKILLED 4</option>
-                                                                    <option value="Our Instructors">Our Instructors</option>
-                                                                    <option value="Instructors">Instructors</option>
-                                                                    <option value="Countries">Countries</option>
-                                                                    <option value="Service 1">Service 1</option>
-                                                                    <option value="Why">Why</option>
-                                                                    <option value="Why 2">Why 2</option> {% endcomment %}
+                                                          
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -323,7 +289,7 @@
                                                                 {% endif %} {% endcomment %}
                                                             </div>
                                                         </div>
-                                                        <div class="col-6 mt-5">
+                                                        {% comment %} <div class="col-6 mt-5">
                                                             <div class="col-12 p-2">
                                                                 <label>Slider Image</label>
                                                             </div>
@@ -333,7 +299,7 @@
                                                                     <img src="{{ obj.slider_image.url }}" style="max-width: 50%; height: auto">
                                                                 {% endif %}
                                                             </div>
-                                                        </div>
+                                                        </div> {% endcomment %}
                                                         <div class="col-6 mt-5">
                                                             <div class="col-12 p-2">
                                                                 <label>Image</label>
