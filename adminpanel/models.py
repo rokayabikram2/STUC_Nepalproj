@@ -42,7 +42,10 @@ class Comment(models.Model):
 
 class Navigation(models.Model):
     PAGE_TYPE = (
-        ('Home', 'Home'),('Home/Banner','Home/Banner'),('Notice','Notice'),('Features', 'Features'),
+        ('Home', 'Home'),('Home/Banner','Home/Banner'),('Notice','Notice'),('About/introduction','About/introduction'),
+        ('Associate Organization','Associate Organization'),('Board of Directors','Board of Directors'),('Chairman Message','Chairman Message'),
+        ('Secretary Message','Secretary Message'),('Bidhans','Bidhans'),
+        ('Features', 'Features'),
         ('Features_1', 'Features_1'),('Home/Video', 'Home/Video'),('Aboutus', 'Aboutus'),('Aboutus_1', 'Aboutus_1'),
         ('Achievements', 'Achievements'),('Achievements_1', 'Achievements_1'),('Testimonials', 'Testimonials'),
         ('Blog','Blog'),('Services', 'Services'),('Vision','Vision'),('Mission','Mission'),
@@ -57,7 +60,7 @@ class Navigation(models.Model):
         ('Draft', 'Draft')
     )
     name = models.CharField(max_length=100, null=False)
-    caption = models.CharField(max_length=100)
+    caption = models.CharField(max_length=100,null=True)
     status = models.CharField(choices=STATUS, max_length=50)
     position = models.IntegerField()
     page_type = models.CharField(choices=PAGE_TYPE, null=True, blank=True, max_length=50)

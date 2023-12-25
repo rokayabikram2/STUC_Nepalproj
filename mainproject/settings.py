@@ -147,7 +147,7 @@ ASSETS_URL = "/assets/"
 ASSETS_ROOT = os.path.join(BASE_DIR,"STUC-Nepal", "client", 'dist', 'assets')
 
 #reactapp
-REACT_APP = os.path.join(BASE_DIR,"STUC-Nepal","client")
+REACT_APP = os.path.join(BASE_DIR,"STUC-Nepal", "client")
 
 
 # Default primary key field type

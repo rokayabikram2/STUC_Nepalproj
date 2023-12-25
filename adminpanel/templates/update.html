@@ -108,14 +108,14 @@
                                                                 <input type="text" name="name" value="{{ data.name }}">
                                                             </div>
                                                         </div>
-                                                        <div class="col-6">
+                                                        {% comment %} <div class="col-6">
                                                             <div class="col-12 p-2">
                                                                 <label>Caption</label>
                                                             </div>
                                                             <div class="col-8">
                                                                 <input type="text" name="caption" value="{{ data.caption }}">
                                                             </div>
-                                                        </div>
+                                                        </div> {% endcomment %}
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,6 +155,10 @@
                                                             <div class="col-5">
                                                                 <select type="text" name="page_type" value="{{ data.page_type }}">
                                                                     <option value="">Select Page Type</option>
+                                                                    <option value="Group"
+                                                                            {% if data.page_type == "Group" %}selected="selected"{% endif %}>
+                                                                        Group
+                                                                    </option>
                                                                     <option value="Home"
                                                                             {% if data.page_type == "Home" %}selected="selected"{% endif %}>
                                                                         Home
@@ -167,33 +171,29 @@
                                                                             {% if data.page_type == "Notice" %}selected="selected"{% endif %}>
                                                                         Notice
                                                                     </option>
-                                                                    <option value="Features"
-                                                                            {% if data.page_type == "Features" %}selected="selected"{% endif %}>
-                                                                        Features
+                                                                    <option value="About/introduction"
+                                                                            {% if data.page_type == "About/introduction" %}selected="selected"{% endif %}>
+                                                                        About/introduction
                                                                     </option>
-                                                                    <option value="Group"
-                                                                            {% if data.page_type == "Group" %}selected="selected"{% endif %}>
-                                                                        Group
+                                                                    <option value="Associate Organization"
+                                                                            {% if data.page_type == "Associate Organization" %}selected="selected"{% endif %}>
+                                                                        Associate Organization
                                                                     </option>
-                                                                    <option value="Features_1"
-                                                                            {% if data.page_type == "Features_1" %}selected="selected"{% endif %}>
-                                                                        Features_1
+                                                                    <option value="Board of Directors"
+                                                                            {% if data.page_type == "Board of Directors" %}selected="selected"{% endif %}>
+                                                                        Board of Directors
                                                                     </option>
-                                                                    <option value="Home/Video"
-                                                                            {% if data.page_type == "Home/Video" %}selected="selected"{% endif %}>
-                                                                        Home/Video
+                                                                    <option value="Chairman Message"
+                                                                            {% if data.page_type == "Chairman Message" %}selected="selected"{% endif %}>
+                                                                        Chairman Message
                                                                     </option>
-                                                                    <option value="Achievements"
-                                                                            {% if data.page_type == "Achievements" %}selected="selected"{% endif %}>
-                                                                        Achievements
+                                                                    <option value="Secretary Message"
+                                                                            {% if data.page_type == "Secretary Message" %}selected="selected"{% endif %}>
+                                                                        Secretary Message
                                                                     </option>
-                                                                    <option value="Achievements_1"
-                                                                            {% if data.page_type == "Achievements_1" %}selected="selected"{% endif %}>
-                                                                        Achievements_1
-                                                                    </option>
-                                                                    <option value="Testimonials"
-                                                                            {% if data.page_type == "Testimonials" %}selected="selected"{% endif %}>
-                                                                        Testimonials
+                                                                    <option value="Bidhans"
+                                                                            {% if data.page_type == "Bidhans" %}selected="selected"{% endif %}>
+                                                                        Bidhans
                                                                     </option>
                                                                     <option value="Blog"
                                                                             {% if data.page_type == "Blog" %}selected="selected"{% endif %}>
@@ -308,16 +308,17 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            
+                                             <div class="form-group">
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <div class="col-12 p-2">
+                                                            {% comment %} <div class="col-12 p-2">
                                                                 <label>Short Description</label>
                                                             </div>
                                                             <div class="col-12">
                                                                 <textarea class="summernote" id="summernote" name="short_desc">{{ data.short_desc }}</textarea>
-                                                            </div>
+                                                            </div> {% endcomment %}
                                                             <div class="col-12">
                                                                 <div class="col-12 p-2">
                                                                     <label>Description</label>
@@ -329,7 +330,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                                
+                                                 {% comment %} <div class="form-group">
                                                     <div class="container">
                                                         <div class="row">
                                                             <div class="col-6">
@@ -350,7 +352,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>  {% endcomment %}
                                                 <div class="form-group">
                                                     <div class="container">
                                                         <div class="row">
@@ -411,15 +413,15 @@
                                                                     </video>
                                                                 </div>
                                                             </div>
-                                                            {% comment %} <div class="col-6 mt-5">
+                                                            <div class="col-6 mt-5">
                                                                 <div class="col-12 p-2">
-                                                                    <label>Brochure</label>
+                                                                    <label>File</label>
                                                                 </div>
                                                                 <div class="col-8">
                                                                     <input type="file" name="brochure">
                                                                     {% if data.brochure %}<a href="{{ data.brochure.url }}" target="_blank">{{ data.brochure }}{% endif %}
                                                                     </div>
-                                                            </div> {% endcomment %}
+                                                            </div> 
                                                             <div class="form-group">
                                                                 <div class="container">
                                                                     <div class="row"></div>
