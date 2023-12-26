@@ -1,5 +1,5 @@
 from django.db import models
-# from django.utils import timezone
+from django.utils import timezone
 
 class GlobalSettings(models.Model):
     SiteName = models.CharField(max_length=100,null =True)
@@ -44,15 +44,10 @@ class Navigation(models.Model):
     PAGE_TYPE = (
         ('Home', 'Home'),('Home/Banner','Home/Banner'),('Notice','Notice'),('About/introduction','About/introduction'),
         ('Associate Organization','Associate Organization'),('Board of Directors','Board of Directors'),('Chairman Message','Chairman Message'),
-        ('Secretary Message','Secretary Message'),('Bidhans','Bidhans'),
-        ('Features', 'Features'),
-        ('Features_1', 'Features_1'),('Home/Video', 'Home/Video'),('Aboutus', 'Aboutus'),('Aboutus_1', 'Aboutus_1'),
-        ('Achievements', 'Achievements'),('Achievements_1', 'Achievements_1'),('Testimonials', 'Testimonials'),
-        ('Blog','Blog'),('Services', 'Services'),('Vision','Vision'),('Mission','Mission'),
-        ('Objectives','Objectives'),('Our Strength','Our Strength'),('Research & Development','Research & Development'),
-        ('Video_Gallery', 'Video_Gallery'),('Gallery', 'Gallery'),('Image_Gallery', 'Image_Gallery'),
-        ('Contact', 'Contact'),('Group', 'Group'),('Video', 'Video'),('Blog_1','Blog_1'),('Services_1', 'Services_1'),
-        ('Client', 'Client'),('Client/Title', 'Client/Title'),('Our Team','Our Team'),('OurTeam/Slider','OurTeam/Slider')
+        ('Secretary Message','Secretary Message'),('Bidhans','Bidhans'),('News/Events','News/Events'),('Issue/Campaigns','Issue/Campaigns'),('Publications','Publications'),
+        ('Membership Form','Membership Form'),('Image_Gallery', 'Image_Gallery'),('Video_Gallery', 'Video_Gallery'),('Download','Download'),('Press release','Press release'),
+        ('Contact', 'Contact')
+        
     )
 
     STATUS = (
@@ -74,7 +69,7 @@ class Navigation(models.Model):
     slider_image = models.ImageField(upload_to="about/", null=True)
     Parent = models.ForeignKey('self', related_name="childs", on_delete=models.CASCADE, null=True, blank=True)
     brochure = models.FileField(upload_to="brochure/",null=True)
-    date = models.DateField(auto_now_add=True, null=True)
+    date = models.DateField(null=True, blank=True)
     image = models.ImageField(upload_to="about/",null=True)
     video = models.FileField(upload_to="video/%y", null=True)
 

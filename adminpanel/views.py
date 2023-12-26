@@ -9,6 +9,7 @@ from django.conf import settings
 from django.core.paginator import Paginator
 from django.views.generic import View
 import os
+from django.utils import timezone
 # from .models import Apply
 
 class ReactAppView(View):
@@ -246,6 +247,13 @@ def navigation_list(request, parent_id=None):
             parent_navigation = Navigation.objects.get(pk=parent_id)
         else:
             parent_navigation = None
+        
+     
+            
+        try:
+            date_obj = timezone.datetime.strptime(date, '%Y-%m-%d')
+        except ValueError:
+            date_obj = None
 
         # Create a new Navigation objectj
         obj = Navigation.objects.create(
@@ -260,7 +268,7 @@ def navigation_list(request, parent_id=None):
             meta_keyword=meta_keyword,
             desc=desc,
             icon_image=icon_image,
-            date = date,
+            date = date_obj,
             image = image,
             Parent=parent_navigation,  # Assign parent navigation object
         )

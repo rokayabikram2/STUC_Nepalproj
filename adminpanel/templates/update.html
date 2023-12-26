@@ -195,37 +195,22 @@
                                                                             {% if data.page_type == "Bidhans" %}selected="selected"{% endif %}>
                                                                         Bidhans
                                                                     </option>
-                                                                    <option value="Blog"
-                                                                            {% if data.page_type == "Blog" %}selected="selected"{% endif %}>
-                                                                        Blog
+                                                                    <option value="News/Events"
+                                                                            {% if data.page_type == "News/Events" %}selected="selected"{% endif %}>
+                                                                        News/Events
                                                                     </option>
-                                                                    <option value="Services"
-                                                                            {% if data.page_type == "Services" %}selected="selected"{% endif %}>
-                                                                        Services
+                                                                    <option value="Issue/Campaigns"
+                                                                            {% if data.page_type == "Issue/Campaigns" %}selected="selected"{% endif %}>
+                                                                        Issue/Campaigns
                                                                     </option>
-                                                                    <option value="Mission"
-                                                                            {% if data.page_type == "Mission" %}selected="selected"{% endif %}>
-                                                                        Mission
+                                                                    <option value="Publications"
+                                                                    {% if data.page_type == "Publications" %}selected="selected"{% endif %}>
+                                                                    Publications
+                                                            
                                                                     </option>
-                                                                    <option value="Vision"
-                                                                            {% if data.page_type == "Vision" %}selected="selected"{% endif %}>
-                                                                        Vision
-                                                                    </option>
-                                                                    <option value="Objectives"
-                                                                            {% if data.page_type == "Objectives" %}selected="selected"{% endif %}>
-                                                                        Objectives
-                                                                    </option>
-                                                                    <option value="Our Strength"
-                                                                            {% if data.page_type == "Our Strength" %}selected="selected"{% endif %}>
-                                                                        Our Strength
-                                                                    </option>
-                                                                    <option value="Research & Development"
-                                                                            {% if data.page_type == "Research & Development" %}selected="selected"{% endif %}>
-                                                                        Research & Development
-                                                                    </option>
-                                                                    <option value="Gallery"
-                                                                            {% if data.page_type == "Gallery" %}selected="selected"{% endif %}>
-                                                                        Gallery
+                                                                    <option value="Membership Form"
+                                                                            {% if data.page_type == "Membership Form" %}selected="selected"{% endif %}>
+                                                                        Membership Form
                                                                     </option>
                                                                     <option value="Video_Gallery"
                                                                             {% if data.page_type == "Video_Gallery" %}selected="selected"{% endif %}>
@@ -239,44 +224,8 @@
                                                                             {% if data.page_type == "Contact" %}selected="selected"{% endif %}>
                                                                         Contact
                                                                     </option>
-                                                                    <option value="Aboutus"
-                                                                            {% if data.page_type == "Aboutus" %}selected="selected"{% endif %}>
-                                                                        Aboutus
-                                                                    </option>
-                                                                    <option value="Aboutus_1"
-                                                                            {% if data.page_type == "Aboutus_1" %}selected="selected"{% endif %}>
-                                                                        Aboutus_1
-                                                                    </option>
-                                                                    <option value="Our Team"
-                                                                    {% if data.page_type == "Our Team" %}selected="selected"{% endif %}>
-                                                                        Our Team
-                                                                    </option>
-                                                                    <option value="OurTeam/Slider"
-                                                                    {% if data.page_type == "OurTeam/Slider" %}selected="selected"{% endif %}>
-                                                                        OurTeam/Slider
-                                                                    </option>
-                                                                    
-                                                                    <option value="Video"
-                                                                            {% if data.page_type == "Video" %}selected="selected"{% endif %}>
-                                                                        Video
-                                                                    </option>
-                                                                    <option value="Blog_1"
-                                                                            {% if data.page_type == "Blog_1" %}selected="selected"{% endif %}>
-                                                                        Blog_1
-                                                                    </option>
-                                                                    <option value="Services_1"
-                                                                            {% if data.page_type == "Services_1" %}selected="selected"{% endif %}>
-                                                                        Services_1
-                                                                    </option>
-                                                                    <option value="Client"
-                                                                            {% if data.page_type == "Client" %}selected="selected"{% endif %}>
-                                                                        Client
-                                                                    </option>
-                                                                    <option value="Client/Title"
-                                                                    {% if data.page_type == "Client/Title" %}selected="selected"{% endif %}>
-                                                                    Client/Title
-                                                                    </option>
-                                                        
+                                                               
+                                                                   
                                                               
                                                                 </select>
                                                             </div>
@@ -324,7 +273,9 @@
                                                                     <label>Description</label>
                                                                 </div>
                                                                 <div class="col-12">
-                                                                    <textarea class="summernote" id="summernote" name="desc">{{ data.desc }}</textarea>
+                                                                    {% comment %} <textarea class="summernote" id="summernote" name="desc">{{ data.desc }}</textarea> {% endcomment %}
+                                                                    <textarea name="desc">{{ data.desc }}</textarea>
+
                                                                 </div>
                                                             </div>
                                                         </div>
