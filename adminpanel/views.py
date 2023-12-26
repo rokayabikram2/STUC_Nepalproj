@@ -327,6 +327,11 @@ def update(request, pk):
             parent_navigation = Navigation.objects.get(pk=parent_id)
         else:
             parent_navigation = None
+            
+        try:
+            date_obj = timezone.datetime.strptime(date, '%Y-%m-%d')
+        except ValueError:
+            date_obj = None
 
         
         # Update the object with the form data
@@ -342,7 +347,7 @@ def update(request, pk):
         data.desc = desc
         data.Parent=parent_navigation
         data.icon_image=icon_image
-        data.date=date
+        data.date=date_obj
         
 
         if bannerimage:

@@ -104,18 +104,18 @@
                                                             <div class="col-12 p-2">
                                                                 <label>Name</label>
                                                             </div>
-                                                            <div class="col-11">
+                                                            <div class="col-12">
                                                                 <input type="text" name="name" value="{{ data.name }}">
                                                             </div>
                                                         </div>
-                                                        {% comment %} <div class="col-6">
+                                                        <div class="col-6">
                                                             <div class="col-12 p-2">
-                                                                <label>Caption</label>
+                                                                <label>Photo/Video Album</label>
                                                             </div>
                                                             <div class="col-8">
                                                                 <input type="text" name="caption" value="{{ data.caption }}">
                                                             </div>
-                                                        </div> {% endcomment %}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -167,6 +167,11 @@
                                                                             {% if data.page_type == "Home/Banner" %}selected="selected"{% endif %}>
                                                                         Home/Banner
                                                                     </option>
+                                                                    <option value="Major Activities"
+                                                                            {% if data.page_type == "Major Activities" %}selected="selected"{% endif %}>
+                                                                        Major Activities
+                                                                    </option>
+                                                                    
                                                                     <option value="Notice"
                                                                             {% if data.page_type == "Notice" %}selected="selected"{% endif %}>
                                                                         Notice
