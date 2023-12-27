@@ -59,7 +59,6 @@
                           <th>Name</th>
                           <th>Mobile No</th>
                           <th>Email</th>
-                          <th>Subject</th>
                           <th>Message</th>
                         </tr>
                       </thead>
@@ -71,9 +70,8 @@
                             </td>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ cons.name }}</td>
-                            <td>{{ cons.mobileno }}</td>
+                            <td>{{ cons.mobile }}</td>
                             <td>{{ cons.email }}</td>
-                            <td>{{ cons.subject }}</td>
                             <td>{{ cons.message }}</td>
                           </tr>
                         {% endfor %}
@@ -87,7 +85,6 @@
                           <th>Name</th>
                           <th>Mobile No</th>
                           <th>Email</th>
-                          <th>Subject</th>
                           <th>Message</th>
                         </tr>
                         {% for cons in results %}
@@ -97,9 +94,8 @@
                             </td>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ cons.name }}</td>
-                            <td>{{ cons.mobileno }}</td>
+                            <td>{{ cons.mobile }}</td>
                             <td>{{ cons.email }}</td>
-                            <td>{{ cons.subject }}</td>
                             <td>{{ cons.message }}</td>
                             <td>
                               {% comment %} <form method="POST" action="{% url 'delete' pk=cons.pk %}">
