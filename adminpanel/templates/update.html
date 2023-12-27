@@ -225,6 +225,14 @@
                                                                             {% if data.page_type == "Image_Gallery" %}selected="selected"{% endif %}>
                                                                         Image_Gallery
                                                                     </option>
+                                                                    <option value="Download"
+                                                                            {% if data.page_type == "Download" %}selected="selected"{% endif %}>
+                                                                        Download
+                                                                    </option>
+                                                                    <option value="Press release"
+                                                                            {% if data.page_type == "Press release" %}selected="selected"{% endif %}>
+                                                                        Press release
+                                                                    </option>
                                                                     <option value="Contact"
                                                                             {% if data.page_type == "Contact" %}selected="selected"{% endif %}>
                                                                         Contact
@@ -278,8 +286,8 @@
                                                                     <label>Description</label>
                                                                 </div>
                                                                 <div class="col-12">
-                                                                    {% comment %} <textarea class="summernote" id="summernote" name="desc">{{ data.desc }}</textarea> {% endcomment %}
-                                                                    <textarea name="desc">{{ data.desc }}</textarea>
+                                                                    <textarea class="summernote" id="summernote" name="desc">{{ data.desc }}</textarea> 
+                                                                    {% comment %} <textarea name="desc">{{ data.desc }}</textarea> {% endcomment %}
 
                                                                 </div>
                                                             </div>

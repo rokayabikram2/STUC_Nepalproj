@@ -176,9 +176,11 @@
                                                                     <option value="Membership Form">Membership Form</option>
                                                                     <option value="Video_Gallery">Video_Gallery</option>
                                                                     <option value="Image_Gallery">Image_Gallery</option>
+                                                                    <option value="Download">Download</option>
+                                                                    <option value="Press release">Press release</option>                                                                    
                                                                     <option value="Contact">Contact</option>
                                                                                       
-                                                          
+                                    
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -225,8 +227,8 @@
                                                                 <label>Description</label>
                                                             </div>
                                                             <div class="col-12">
-                                                                {% comment %} <textarea class="summernote" id="summernote" name="desc"></textarea> {% endcomment %}
-                                                                <textarea name="desc"></textarea>
+                                                                <textarea class="summernote" id="summernote" name="desc"></textarea>
+                                                                {% comment %} <textarea name="desc"></textarea> {% endcomment %}
 
                                                             </div>
                                                         </div>
@@ -281,7 +283,7 @@
                                                                 {% endif %}
                                                             </div>
                                                         </div> {% endcomment %}
-                                                        <div class="col-6 mt-5">
+                                                        {% comment %} <div class="col-6 mt-5">
                                                             <div class="col-12 p-2">
                                                                 <label>Image</label>
                                                             </div>
@@ -291,7 +293,7 @@
                                                                     <img src="{{ obj.image.url }}" style="max-width: 50%; height: auto" />
                                                                 {% endif %}
                                                             </div>
-                                                        </div>
+                                                        </div> {% endcomment %}
                                                         <div class="col-6 mt-5">
                                                             <div class="col-12 p-2">
                                                                 <label for="video">Video</label>
