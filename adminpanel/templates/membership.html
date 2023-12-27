@@ -9,10 +9,10 @@
          navbar-scroll="true">
       <div class="container-fluid py-1 px-3 align-items-center">
         <nav aria-label="breadcrumb">
-          <h6 class="font-weight-bolder mb-0">Post Comment</h6>
+          <h6 class="font-weight-bolder mb-0">Membership Details</h6>
         </nav>
         <div>
-          <form action="{% url 'comment' %}"
+          <form action="{% url 'membership' %}"
                 method="GET"
                 class="my-2 d-flex justify-content-end ms-auto">
             <div class="input-group col-12">
@@ -46,7 +46,7 @@
             <div class="container-fluid py-4">
               <div class="card-body px-0 pb-2">
                 <div class="table-responsive p-0">
-                  <form id="deleteForm" method="POST" action="{% url 'delete_comment' %}">
+                  <form id="deleteForm" method="POST" action="{% url 'delete_membership' %}">
                     {% csrf_token %}
                     <tr>
                       <th>

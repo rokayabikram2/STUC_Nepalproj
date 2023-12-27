@@ -4,4 +4,4 @@ from .models import *
 admin.site.register(GlobalSettings)
 admin.site.register(ContactUS)
 admin.site.register(Navigation)
-admin.site.register(Comment)
+admin.site.register(Membership)

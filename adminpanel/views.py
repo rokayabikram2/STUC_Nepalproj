@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from .models import GlobalSettings, ContactUS, Navigation, Comment
+from .models import GlobalSettings, ContactUS, Navigation, Membership
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.core.paginator import Paginator
@@ -167,27 +167,27 @@ def delete_contact(request):
 
     # return redirect('contactus')
 
-def comment(request):
+def membership(request):
     glob = GlobalSettings.objects.all()
-    con=Comment.objects.all()
+    con = Membership.objects.all()
     query = request.GET.get('q')
     results = None
     
     if query:
-        results = Comment.objects.filter(name__icontains=query)
+        results = Membership.objects.filter(name__icontains=query)
     
 
-    dels = Comment.objects.all()
+    dels = Membership.objects.all()
     dels = dels.order_by('-id')
     paginator = Paginator(dels, 10)  # Show 6 contacts per page.
 
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
  
-    return render(request, "Comment.html",{'con':con, 'glob' : glob, 'page_obj':page_obj,'results':results})
+    return render(request, "membership.html",{'con':con, 'glob' : glob, 'page_obj':page_obj,'results':results})
 
 @login_required(login_url=settings.LOGIN_URL)
-def delete_comment(request):
+def delete_membership(request):
     if request.method == "POST":
         # Check if "selected_items" is in the POST data
         selected_items = request.POST.getlist('selected_items[]')
@@ -195,10 +195,10 @@ def delete_comment(request):
         if selected_items:
             # Loop through the selected items and delete them
             for item_pk in selected_items:
-                con = get_object_or_404(Comment, pk=item_pk)
+                con = get_object_or_404(Membership, pk=item_pk)
                 con.delete()
 
-    return redirect('comment')
+    return redirect('membership')
 
 @login_required(login_url=settings.LOGIN_URL)
 def main_navigation(request, parent_id=None):

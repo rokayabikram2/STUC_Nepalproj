@@ -116,18 +116,6 @@ class contactUS(APIView):
     Retrieve, update or delete a snippet instance.
 
     """
-    # def post(self,request,format=None):
-    #     data = request.data
-    #       # Example: Save the form data to the ContactUS model
-    #     contact = ContactUS.objects.create(
-    #         full_name=data.get('full_name'),
-    #         mobileno=data.get('mobileno'),
-    #         email=data.get('email'),
-    #         subject=data.get('subject'),
-    #         message=data.get('message')
-    #     )
-    #     # Return a response
-    #     return Response({'message': 'Contact form data received'}, status=status.HTTP_201_CREATED)
     
     def get_object(self, pk):
         try:
@@ -160,17 +148,7 @@ class comment(APIView):
     Retrieve, update or delete a snippet instance.
 
     """
-    # def post(self,request,format=None):
-    #     data = request.data
-    #       # Example: Save the form data to the ContactUS model
-    #     comment = Comment.objects.create(
-    #         full_name=data.get('full_name'),
-    #         mobileno=data.get('mobileno'),
-    #         email=data.get('email'),
-    #         message=data.get('message')
-    #     )
-    #     # Return a response
-    #     return Response({'message': 'Comment form data received'}, status=status.HTTP_201_CREATED)
+  
     
     def get_object(self, pk):
         try:
