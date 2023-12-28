@@ -167,6 +167,11 @@
                                                                             {% if data.page_type == "Home/Banner" %}selected="selected"{% endif %}>
                                                                         Home/Banner
                                                                     </option>
+                                                                    <option value="Home/Video"
+                                                                            {% if data.page_type == "Home/Video" %}selected="selected"{% endif %}>
+                                                                        Home/Video
+                                                                    </option>
+                                                                    
                                                                     <option value="Major Activities"
                                                                             {% if data.page_type == "Major Activities" %}selected="selected"{% endif %}>
                                                                         Major Activities
@@ -331,17 +336,7 @@
                                                                     {% endif %}
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6 mt-5">
-                                                                <div class="col-12 p-2">
-                                                                    <label>Icon Image</label>
-                                                                </div>
-                                                                <div class="col-8">
-                                                                    <input type="text" name="icon_image" value="{{ data.icon_image }}">
-                                                                    {% comment %} {% if data.icon_image %}
-                                                                        <img src="{{ data.icon_image }}" style="max-width: 50%; height: auto">
-                                                                    {% endif %} {% endcomment %}
-                                                                </div>
-                                                            </div>
+                                                     
                                                             {% comment %} <div class="col-6 mt-5">
                                                                 <div class="col-12 p-2">
                                                                     <label>Slider Image</label>
@@ -355,7 +350,7 @@
                                                                     {% endif %}
                                                                 </div>
                                                             </div> {% endcomment %}
-                                                            <div class="col-6">
+                                                            {% comment %} <div class="col-6">
                                                                 <div class="col-12 p-2 mt-5">
                                                                     <label>Image</label>
                                                                 </div>
@@ -365,7 +360,7 @@
                                                                         <img src="{{ data.image.url }}" style="max-width: 50%; height: auto">
                                                                     {% endif %}
                                                                 </div>
-                                                            </div>
+                                                            </div> {% endcomment %}
                                                             <div class="col-6 mt-5">
                                                                 <div class="col-12 p-2">
                                                                     <label for="video">Video</label>
@@ -377,6 +372,8 @@
                                                                     </video>
                                                                 </div>
                                                             </div>
+                                                          
+                                                            
                                                             <div class="col-6 mt-5">
                                                                 <div class="col-12 p-2">
                                                                     <label>File</label>
@@ -386,6 +383,14 @@
                                                                     {% if data.brochure %}<a href="{{ data.brochure.url }}" target="_blank">{{ data.brochure }}{% endif %}
                                                                     </div>
                                                             </div> 
+                                                            <div class="col-12 mt-5">
+                                                                <div class="col-12 p-2">
+                                                                    <label>Video Link</label>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <input type="text" name="video_link" value="{{ data.video_link }}">
+                                                                </div>
+                                                            </div>
                                                             <div class="form-group">
                                                                 <div class="container">
                                                                     <div class="row"></div>

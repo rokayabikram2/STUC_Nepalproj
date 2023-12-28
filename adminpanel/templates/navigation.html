@@ -162,6 +162,7 @@
                                                                     <option value="Group">Group</option>
                                                                     <option value="Home">Home</option>
                                                                     <option value="Home/Banner">Home/Banner</option>
+                                                                    <option value="Home/Video">Home/Video</option>      
                                                                     <option value="Major Activities">Major Activities</option>                        
                                                                     <option value="Notice">Notice</option>
                                                                     <option value="About/introduction">About/introduction</option>
@@ -264,7 +265,7 @@
                                                             <div class="col-12 p-2">
                                                                 <label>Banner Image</label>
                                                             </div>
-                                                            <div class="col-8 mt-5">
+                                                            <div class="col-8 ">
                                                                 <input type="file" name="bannerimage">
                                                                 {% if obj.bannerimage %}
                                                                     <img src="{{ obj.bannerimage.url }}" style="max-width: 50%; height: auto" />
@@ -298,7 +299,7 @@
                                                             <div class="col-12 p-2">
                                                                 <label for="video">Video</label>
                                                             </div>
-                                                            <div class="col-8 mt-5">
+                                                            <div class="col-8 ">
                                                                 <input name="video" type="file" id="video">
                                                                 {% if obj.video %}
                                                                     <video controls style="max-width: 50%; height: auto">
@@ -307,15 +308,24 @@
                                                                 {% endif %}
                                                             </div>
                                                         </div>
+                                                      
                                                         <div class="col-6 mt-5">
                                                             <div class="col-12 p-2">
                                                                 <label>File</label>
                                                             </div>
-                                                            <div class="col-8 mt-5">
+                                                            <div class="col-8 ">
                                                                 <input type="file" name="brochure">
                                                                 {% if obj.brochure %}<a href="{{ obj.brochure.url }}" target="_blank">{{ obj.brochure }}{% endif %}
                                                                 </div>
                                                         </div> 
+                                                        <div class="col-12 mt-5">
+                                                            <div class="col-12 p-2">
+                                                                <label>Video Link</label>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <input type="text" name="video_link">
+                                                            </div>
+                                                        </div>
                                                         <div class="form-group">
                                                             <div class="container">
                                                                 <div class="row"></div>

@@ -41,7 +41,7 @@ class Comment(models.Model):
 
 class Navigation(models.Model):
     PAGE_TYPE = (
-        ('Home', 'Home'),('Home/Banner','Home/Banner'),('Notice','Notice'),('Major Activities','Major Activities'),('About/introduction','About/introduction'),
+        ('Home', 'Home'),('Home/Banner','Home/Banner'),('Home/Video','Home/Video'),('Notice','Notice'),('Major Activities','Major Activities'),('About/introduction','About/introduction'),
         ('Associate Organization','Associate Organization'),('Board of Directors','Board of Directors'),('Chairman Message','Chairman Message'),
         ('Secretary Message','Secretary Message'),('Bidhans','Bidhans'),('News/Events','News/Events'),('Issue/Campaigns','Issue/Campaigns'),('Publications','Publications'),
         ('Membership Form','Membership Form'),('Image_Gallery', 'Image_Gallery'),('Video_Gallery', 'Video_Gallery'),('Download','Download'),('Press release','Press release'),
@@ -71,6 +71,7 @@ class Navigation(models.Model):
     date = models.DateField(null=True, blank=True)
     image = models.ImageField(upload_to="about/",null=True)
     video = models.FileField(upload_to="video/%y", null=True)
+    video_link = models.CharField(max_length=1000,null=True)
 
     def __str__(self):
         return self.name

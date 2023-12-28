@@ -250,6 +250,8 @@ def navigation_list(request, parent_id=None):
         desc = request.POST.get('desc')
         date = request.POST.get('date')
         video = request.FILES.get('video')
+        video_link = request.POST.get('video_link')
+        
 
         if parent_id:
             parent_navigation = Navigation.objects.get(pk=parent_id)
@@ -278,6 +280,7 @@ def navigation_list(request, parent_id=None):
             icon_image=icon_image,
             date = date_obj,
             image = image,
+            video_link=video_link,
             Parent=parent_navigation,  # Assign parent navigation object
         )
         # obj.Parent = Navigation.objects.filter(id=parent_id)
@@ -330,6 +333,7 @@ def update(request, pk):
         parent_id = request.POST.get('Parent')
         date = request.POST.get('date')
         video = request.FILES.get('video')
+        video_link = request.POST.get('video_link')
 
         if parent_id:
             parent_navigation = Navigation.objects.get(pk=parent_id)
@@ -356,6 +360,7 @@ def update(request, pk):
         data.Parent=parent_navigation
         data.icon_image=icon_image
         data.date=date_obj
+        data.video_link=video_link
         
 
         if bannerimage:
