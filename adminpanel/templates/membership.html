@@ -61,9 +61,11 @@
                           <th>Select</th>
                           <th>S.N</th>
                           <th>Name</th>
+                          <th>Gender</th>
+                          <th>DOB</th>
                           <th>Mobile No</th>
-                          <th>Email</th>
-                          <th>Message</th>
+                          <th>District</th>
+                          
                         </tr>
                       </thead>
                       <tbody>
@@ -74,9 +76,17 @@
                             </td>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ cons.name }}</td>
-                            <td>{{ cons.mobileno }}</td>
-                            <td>{{ cons.email }}</td>
-                            <td>{{ cons.message }}</td>
+                            <td>{{ cons.Gender }}</td>
+                            <td>{{ cons.date }}</td>
+                            <td>{{ cons.mobile }}</td>
+                            <td>{{ cons.district }}</td>
+                            <td>
+                              <!-- Detail Button -->
+                              <button class="btn btn-primary btn-sm">
+                                  <a href="{% url 'application' pk=cons.pk %}">Detail</a>
+                              </button>
+                              <!-- End Detail Button -->
+                            </td>
                           </tr>
                         {% endfor %}
                       </tbody>
@@ -87,9 +97,10 @@
                           <th>Select</th>
                           <th>S.N</th>
                           <th>Name</th>
+                          <th>Gender</th>
+                          <th>DOB</th>
                           <th>Mobile No</th>
-                          <th>Email</th>
-                          <th>Message</th>
+                          <th>District</th>
                         </tr>
                         {% for cons in results %}
                           <tr>
@@ -98,9 +109,17 @@
                             </td>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ cons.name }}</td>
-                            <td>{{ cons.mobileno }}</td>
-                            <td>{{ cons.email }}</td>
-                            <td>{{ cons.message }}</td>
+                            <td>{{ cons.Gender }}</td>
+                            <td>{{ cons.date }}</td>
+                            <td>{{ cons.mobile }}</td>
+                            <td>{{ cons.district }}</td>
+                            <td>
+                              <!-- Detail Button -->
+                              <button class="btn btn-primary btn-sm">
+                                  <a href="{% url 'application' pk=cons.pk %}">Detail</a>
+                              </button>
+                              <!-- End Detail Button -->
+                            </td>
                           </tr>
                           {% comment %} <form method="POST" action="{% url 'delete' pk=cons.pk %}">
                                 {% csrf_token %}

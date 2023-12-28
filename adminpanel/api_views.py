@@ -129,9 +129,9 @@ class contactUS(APIView):
         return Response(serializer.data)
 
 
-class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
+class MembershipViewSet(viewsets.ModelViewSet):
+    queryset = Membership.objects.all()
+    serializer_class = MembershipSerializer
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -139,11 +139,11 @@ class CommentViewSet(viewsets.ModelViewSet):
 
         if serializer.is_valid():
             serializer.save()
-            return Response({'message': 'Comment form data received'}, status=status.HTTP_201_CREATED)
+            return Response({'message': 'membership form data received'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
    
-class comment(APIView):
+class memberships(APIView):
     """
     Retrieve, update or delete a snippet instance.
 
@@ -152,13 +152,13 @@ class comment(APIView):
     
     def get_object(self, pk):
         try:
-            return Comment.objects.get(pk=pk)
-        except Comment.DoesNotExists:
+            return Membership.objects.get(pk=pk)
+        except Membership.DoesNotExists:
             raise Http404
 
     def get(self, request, pk, format=None):
         snippet = self.get_object(pk)
-        serializer = CommentSerializer(snippet)
+        serializer = MembershipSerializer(snippet)
         return Response(serializer.data)
 
 

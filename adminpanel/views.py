@@ -201,6 +201,14 @@ def delete_membership(request):
     return redirect('membership')
 
 @login_required(login_url=settings.LOGIN_URL)
+def application(request,pk):
+    glob = GlobalSettings.objects.all()
+    # app= Apply.objects.all()
+    app = get_object_or_404(Membership, pk=pk)
+    
+    return render (request,'applications.html',{'glob':glob,'app':app})
+
+@login_required(login_url=settings.LOGIN_URL)
 def main_navigation(request, parent_id=None):
     glob=GlobalSettings.objects.all()
     query = request.GET.get('q')

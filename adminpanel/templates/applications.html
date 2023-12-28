@@ -12,7 +12,7 @@
                             <div class="table-responsive p-0" >
                                 <div class="container-fluid py-1 px-3">
                                     <nav aria-label="breadcrumb">
-                                      <h1 class="font-weight-bolder mb-0">Products Order</h1>
+                                      <h1 class="font-weight-bolder mb-0">Membership Form detail</h1>
                                     </nav>
                                   </div>
                                 {% comment %} <div class="flex justify-center mt-4">
@@ -35,23 +35,47 @@
                                                     <label class="mb-1">Mobile No.</label>
                                                     <p>{{ app.mobile }}</p>
                                                 </div>
+                                                <div class="flex flex-col items-start w-full py-3">
+                                                    <label class="mb-1">Gender</label>
+                                                    <p>{{ app.Gender }}</p>
+                                                </div>
                                             </div>
                                             
                                     
                                             <div class="flex md:flex-row flex-col justify-between items-center gap-4">
                                                 <div class="flex flex-col items-start w-full py-3">
-                                                    <label class="mb-1">Email</label>
-                                                    <p>{{ app.email }}</p>
+                                                    <label class="mb-1">DOB</label>
+                                                    <p>{{ app.date }}</p>
                                                 </div>
                                                 <div class="flex flex-col items-start w-full py-3">
-                                                    <label class="mb-1">Product</label>
-                                                    <p>{{ app.product }}</p>
+                                                    <label class="mb-1">citizenship no.</label>
+                                                    <p>{{ app.citizenship }}</p>
+                                                </div>
+                                                <div class="flex flex-col items-start w-full py-3">
+                                                    <label class="mb-1">citizenship Issued District</label>
+                                                    <p>{{ app.issued_district }}</p>
                                                 </div>
                                             </div>
                                             <div class="flex md:flex-row flex-col justify-between items-center gap-4">
                                                 <div class="flex flex-col items-start w-full py-3">
-                                                    <label class="mb-1">Message</label>
-                                                    <p>{{ app.message }}</p>
+                                                    <label class="mb-1">Province</label>
+                                                    <p>{{ app.province }}</p>
+                                                </div>
+                                                <div class="flex flex-col items-start w-full py-3">
+                                                    <label class="mb-1">District</label>
+                                                    <p>{{ app.district }}</p>
+                                                </div>
+                                                <div class="flex flex-col items-start w-full py-3">
+                                                    <label class="mb-1">Muncipality</label>
+                                                    <p>{{ app.muncipality }}</p>
+                                                </div>
+                                                <div class="flex flex-col items-start w-full py-3">
+                                                    <label class="mb-1">Ward</label>
+                                                    <p>{{ app.ward }}</p>
+                                                </div>
+                                                <div class="flex flex-col items-start w-full py-3">
+                                                    <label class="mb-1">Ward</label>
+                                                    <p>{{ app.fathers_name }}</p>
                                                 </div>
                                             </div>
                                             
@@ -65,7 +89,7 @@
                         </div>
                     </div>
                     <div class="flex justify-center mt-4">
-                        <a href="{% url 'apply' %}" class="btn btn-primary">Back</a>
+                        <a href="{% url 'membership' %}" class="btn btn-primary">Back</a>
                     </div>
 
             </div>
