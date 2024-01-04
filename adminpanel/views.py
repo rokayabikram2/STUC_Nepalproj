@@ -226,10 +226,26 @@ def main_navigation(request, parent_id=None):
  
     return render(request, "main_navigation.html", {'obj':obj, 'parent_id':parent_id,'glob':glob,'results':results})
 
+
+from django.db.models import Max
 @login_required(login_url=settings.LOGIN_URL)
 def navigation_list(request, parent_id=None):
     glob = GlobalSettings.objects.all()
     obj = Navigation.objects.all()
+    
+    
+    next_position = 1
+    
+    if parent_id:
+        # If there is a parent, calculate the new position based on the maximum position of existing children
+        parent_navigation = Navigation.objects.get(pk=parent_id)
+        max_position = Navigation.objects.filter(Parent=parent_navigation).aggregate(Max('position'))['position__max']
+
+        # Check if there are existing children
+        if max_position is not None:
+            next_position = max_position + 1
+            
+        
 
     if request.method == "POST":
         # Retrieve form data
@@ -237,7 +253,6 @@ def navigation_list(request, parent_id=None):
         name = request.POST.get('name')
         caption = request.POST.get('caption')
         status = request.POST.get('status')
-        position = request.POST.get('position')
         page_type = request.POST.get('page_type')
         title = request.POST.get('title')
         short_desc = request.POST.get('short_desc')
@@ -254,6 +269,7 @@ def navigation_list(request, parent_id=None):
         video = request.FILES.get('video')
         video_link = request.POST.get('video_link')
         
+
 
         if parent_id:
             parent_navigation = Navigation.objects.get(pk=parent_id)
@@ -272,7 +288,7 @@ def navigation_list(request, parent_id=None):
             name=name,
             caption=caption,
             status=status,
-            position=position,
+            # position=next_position,
             page_type=page_type,
             title=title,
             short_desc=short_desc,
@@ -307,9 +323,9 @@ def navigation_list(request, parent_id=None):
             return redirect('main_navigation', parent_id=parent_id )
         else:
             return redirect('main_navigation')
-      
+           
 
-    return render(request, 'navigation.html',{'obj': obj, 'glob' : glob, 'parent_id':parent_id})
+    return render(request, 'navigation.html',{'obj': obj, 'glob' : glob, 'parent_id':parent_id,'next_position': next_position})
 
 @login_required(login_url=settings.LOGIN_URL)
 def update(request, pk):
@@ -346,6 +362,9 @@ def update(request, pk):
             date_obj = timezone.datetime.strptime(date, '%Y-%m-%d')
         except ValueError:
             date_obj = None
+            
+            
+        
 
         
         # Update the object with the form data
