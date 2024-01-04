@@ -45,11 +45,6 @@
     height: 100%;
 }
 
-@media (max-width:400px) {
-    .login-container {
-        width: 80vh;
-    }
-}
 
 .logo-container {
     position: relative;

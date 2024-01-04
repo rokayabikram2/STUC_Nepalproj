@@ -94,17 +94,25 @@
                                value="{{ data.Siteyoutubelink }}">
                       </div>
                       
-                      <div class="form-group">
+                      {% comment %} <div class="form-group">
                         <label class="col-2 p-2">Sitedescription:</label>
                         <textarea class="col-7" name="description">{{ data.Sitedescription }}</textarea>
 
-                      </div>
+                      </div> {% endcomment %}
                       <div class="form-group">
                         <label class="col-2 p-2">logo:</label>
                         <input type="file" name="logo">
                         {% if data.logo %}
                           <img src="{{ data.logo.url }}" style="height:200px; width:200px;">
                         {% endif %}
+                      </div>
+                      <div class="form-group">
+                        <label class="col-2 p-2">Slogan</label>
+                        <input type="text"
+                               class="col-7"
+                               name="slogan"
+                               value="{{ data.slogan }}"
+                               >
                       </div>
                       <div class="form-group">
                         <label class="col-2 p-2">Flag logo:</label>

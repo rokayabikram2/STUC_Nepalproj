@@ -15,6 +15,9 @@ class GlobalSettings(models.Model):
     logo = models.ImageField(upload_to="Global/",max_length=200, null=True,default=None)
     flag_logo = models.ImageField(upload_to="logo/",null=True,default=None)
     back_image = models.ImageField(upload_to="Global/",null=True)
+    slogan = models.CharField(max_length=100,null=True)
+    
+    
 
     def __str__(self):
         return self.SiteName

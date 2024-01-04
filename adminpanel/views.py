@@ -88,6 +88,7 @@ def globalsetting(request):
         flag_logo = request.FILES.get('flag_logo')
         back_image = request.FILES.get('back_image')
         name_nepali = request.POST.get('name_nepali')
+        slogan = request.POST.get('slogan')
 
 
         if data is None:
@@ -95,7 +96,7 @@ def globalsetting(request):
             data = GlobalSettings(SiteName=name, SiteContact=contact, SiteAddress=address, SiteEmail=email,
                                   Sitedescription=description,Sitetwitterlink=twitterlink,
                                   Sitefacebooklink=facebooklink,name_nepali=name_nepali,
-                                  Siteyoutubelink=youtubelink)
+                                  Siteyoutubelink=youtubelink,slogan=slogan)
         else:
             # Update existing GlobalSettings object
             data.SiteName = name
@@ -107,6 +108,7 @@ def globalsetting(request):
             data.Sitefacebooklink = facebooklink
             data.Siteyoutubelink = youtubelink
             data.name_nepali = name_nepali
+            data.slogan = slogan
 
         if logo:
             # Set the uploaded image to the 'logo' field
