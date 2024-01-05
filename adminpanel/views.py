@@ -282,6 +282,7 @@ def navigation_list(request, parent_id=None):
             date_obj = timezone.datetime.strptime(date, '%Y-%m-%d')
         except ValueError:
             date_obj = None
+            
 
         # Create a new Navigation objectj
         obj = Navigation.objects.create(
@@ -363,9 +364,6 @@ def update(request, pk):
         except ValueError:
             date_obj = None
             
-            
-        
-
         
         # Update the object with the form data
         data.name = name
