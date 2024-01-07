@@ -235,9 +235,11 @@ def navigation_list(request, parent_id=None):
     obj = Navigation.objects.all()
     
     
+    # automatic postion
     if parent_id:
         parent_navigation = Navigation.objects.get(pk=parent_id)
         next_position = Navigation.objects.filter(Parent=parent_navigation).count() + 1
+        
     else:
         next_position = Navigation.objects.filter(Parent__isnull=True).count() + 1
 
