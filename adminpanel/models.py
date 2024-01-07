@@ -59,7 +59,7 @@ class Navigation(models.Model):
     name = models.CharField(max_length=100, null=False)
     caption = models.CharField(max_length=100,null=True)
     status = models.CharField(choices=STATUS, max_length=50)
-    position = models.IntegerField()
+    position = models.IntegerField(null=True)
     page_type = models.CharField(choices=PAGE_TYPE, null=True, blank=True, max_length=50)
     title = models.CharField(max_length=200)
     short_desc = models.TextField(null=True)

@@ -226,6 +226,7 @@ def main_navigation(request, parent_id=None):
  
     return render(request, "main_navigation.html", {'obj':obj, 'parent_id':parent_id,'glob':glob,'results':results})
 
+   
 
 from django.db.models import Max
 @login_required(login_url=settings.LOGIN_URL)
@@ -234,17 +235,12 @@ def navigation_list(request, parent_id=None):
     obj = Navigation.objects.all()
     
     
-    next_position = 1
-    
     if parent_id:
-        # If there is a parent, calculate the new position based on the maximum position of existing children
         parent_navigation = Navigation.objects.get(pk=parent_id)
-        max_position = Navigation.objects.filter(Parent=parent_navigation).aggregate(Max('position'))['position__max']
+        next_position = Navigation.objects.filter(Parent=parent_navigation).count() + 1
+    else:
+        next_position = Navigation.objects.filter(Parent__isnull=True).count() + 1
 
-        # Check if there are existing children
-        if max_position is not None:
-            next_position = max_position + 1
-            
         
 
     if request.method == "POST":
@@ -268,6 +264,7 @@ def navigation_list(request, parent_id=None):
         date = request.POST.get('date')
         video = request.FILES.get('video')
         video_link = request.POST.get('video_link')
+        position = request.POST.get('position')
         
 
 
@@ -289,7 +286,7 @@ def navigation_list(request, parent_id=None):
             name=name,
             caption=caption,
             status=status,
-            # position=next_position,
+            position=position,
             page_type=page_type,
             title=title,
             short_desc=short_desc,
@@ -302,7 +299,6 @@ def navigation_list(request, parent_id=None):
             video_link=video_link,
             Parent=parent_navigation,  # Assign parent navigation object
         )
-        # obj.Parent = Navigation.objects.filter(id=parent_id)
 
         # Set uploaded images
         if bannerimage:
